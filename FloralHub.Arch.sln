@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34526.213
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloralHub.Arch.Api", "FloralHub.Arch.Entrypoint\FloralHub.Arch.Api.csproj", "{98ECF0EC-749E-4084-941A-A0106EDF70BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {304BED2F-7D96-4BED-9285-BBD288B45F29}
+	EndGlobalSection
+EndGlobal
