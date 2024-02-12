@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34526.213
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloralHub.Arch.Api", "FloralHub.Arch.Entrypoint\FloralHub.Arch.Api.csproj", "{98ECF0EC-749E-4084-941A-A0106EDF70BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FloralHub.Arch.Api", "src\FloralHub.Arch.Api\FloralHub.Arch.Api.csproj", "{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE914FD3-2CCD-4915-BB28-8D0343D459BE}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98ECF0EC-749E-4084-941A-A0106EDF70BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
