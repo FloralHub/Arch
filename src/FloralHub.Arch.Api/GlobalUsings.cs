@@ -1,1 +1,1 @@
-global using FloralHub.Arch.Core;
+global using FloralHub.Arch.Api.Endpoints;

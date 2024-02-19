@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloralHub.Arch.Core", "FloralHub.Arch.Core\FloralHub.Arch.Core.csproj", "{4667878B-7476-43FE-A43D-A3AE0DAC85A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FloralHub.Arch.Core", "src\FloralHub.Arch.Core\FloralHub.Arch.Core.csproj", "{191F2E21-0014-457C-958F-6A4B423EDAC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,10 @@ Global
 		{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AD9A917-2C2E-4CE9-9CC0-9C42E78F2BEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4667878B-7476-43FE-A43D-A3AE0DAC85A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4667878B-7476-43FE-A43D-A3AE0DAC85A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4667878B-7476-43FE-A43D-A3AE0DAC85A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4667878B-7476-43FE-A43D-A3AE0DAC85A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191F2E21-0014-457C-958F-6A4B423EDAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191F2E21-0014-457C-958F-6A4B423EDAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191F2E21-0014-457C-958F-6A4B423EDAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191F2E21-0014-457C-958F-6A4B423EDAC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
