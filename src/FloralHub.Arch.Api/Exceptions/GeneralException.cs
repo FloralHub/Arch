@@ -18,7 +18,7 @@ public class GeneralException : Exception
     /// <param name="innerException">Исключение, которое является причиной текущего исключения</param>
     protected GeneralException(string message, Exception innerException) : base(message, innerException) {}
 
-    public GeneralException() : base()
+    public GeneralException()
     {
     }
 }

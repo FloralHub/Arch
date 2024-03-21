@@ -8,6 +8,7 @@ public static class BaseEndpoints
         groupBuilder.GetGuid();
         groupBuilder.GetSchema();
         groupBuilder.AddSchema();
+        groupBuilder.GetUser();
 
         return groupBuilder;
     }
@@ -44,6 +45,26 @@ public static class BaseEndpoints
         endpointBuilder
             .MapPost("/schema/add", (Request request) => AddSchema(request))
             .WithName("AddSchema")
+            .WithTags("Private")
+            .WithSummary("Summary")
+            .WithDisplayName("Display name")
+            .WithOpenApi()
+            .WithDescription("Description");
+
+    public static void GetUser(this IEndpointRouteBuilder endpointBuilder) =>
+        endpointBuilder
+            .MapPost("/user", async (IEnumerable<IUserService> userServices) =>
+            {
+                List<User> users = new();
+
+                foreach (IUserService service in userServices)
+                {
+                    users.Add(await service.GetUser(Guid.NewGuid()));
+                }
+
+                return users;
+            })
+            .WithName("GetUser")
             .WithTags("Private")
             .WithSummary("Summary")
             .WithDisplayName("Display name")

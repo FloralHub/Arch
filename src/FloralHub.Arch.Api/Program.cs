@@ -1,13 +1,18 @@
-using FloralHub.Arch.Api.Controllers;
-using Microsoft.AspNetCore.Mvc;
-using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
-
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<JsonOptions>(options =>
-    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, true)));
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)));
 
 builder.Services.AddMiddlewares();
+
+// decorate test
+{
+    builder.Services.AddScoped<IUserService, UserService>();
+    builder.Services.AddScoped<IUserService, AnotherUserService>();
+
+    builder.Services.Decorate<IUserService, UserServiceDecorator>();
+    builder.Services.Decorate<IUserService, TestUserServiceDecorator>();
+}
 
 builder.Services.AddControllers();
 
@@ -18,7 +23,6 @@ builder.Services.AddSwaggerGen(options =>
 
     options.AddSecurityDefinition("Bearer", new()
     {
-
         Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
         Name = "Authorization",
         In = ParameterLocation.Header,
@@ -85,12 +89,12 @@ app.UseErrorHandleMiddleware();
 app
     .MapGroup("/")
     .MapBaseApi()
-    // TODO: Обработка для MinimapApi контроллеров
+    // TODO: Обработка для MinimalApi контроллеров
     .AddEndpointFilter(async (context, next) =>
     {
-        var one = context.Arguments;
+        IList<object?> one = context.Arguments;
 
-        var result = await next(context);
+        object? result = await next(context);
 
         return result;
     });
@@ -98,7 +102,7 @@ app
 // TODO: Обработка для обычных контроллеров
 app.MapControllers().AddEndpointFilter(async (c, t) =>
 {
-    var result = (await t(c) as ObjectResult)!.Value as ArchController.Result<Guid>;
+    ArchController.Result<Guid>? result = (await t(c) as ObjectResult)!.Value as ArchController.Result<Guid>;
 
     return result;
 });
