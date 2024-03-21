@@ -9,10 +9,6 @@ internal sealed class ExceptionHandlingMiddleware(ILogger<ExceptionHandlingMiddl
     /// <inheritdoc />
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
-        string protocol = context.Request.Protocol;
-
-        logger.LogError("Тестовая проверка IP адреса: {Protocol}", protocol);
-
         try
         {
             await next(context);

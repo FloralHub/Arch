@@ -12,7 +12,8 @@ public class GeneralException : Exception
     protected GeneralException(string message) : base(message) {}
 
     /// <summary>
-    /// Инициализирует новый экземпляр класса <see cref="GeneralException"/> с указанным сообщением об ошибке и ссылкой на внутреннее исключение, которое является причиной текущего
+    /// Инициализирует новый экземпляр класса <see cref="GeneralException"/> с указанным сообщением об ошибке
+    /// и ссылкой на внутреннее исключение, которое является причиной текущего
     /// </summary>
     /// <param name="message">Сообщение, описывающее ошибку</param>
     /// <param name="innerException">Исключение, которое является причиной текущего исключения</param>

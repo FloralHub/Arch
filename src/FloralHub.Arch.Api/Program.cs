@@ -5,15 +5,6 @@ builder.Services.Configure<JsonOptions>(options =>
 
 builder.Services.AddMiddlewares();
 
-// decorate test
-{
-    builder.Services.AddScoped<IUserService, UserService>();
-    builder.Services.AddScoped<IUserService, AnotherUserService>();
-
-    builder.Services.Decorate<IUserService, UserServiceDecorator>();
-    builder.Services.Decorate<IUserService, TestUserServiceDecorator>();
-}
-
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -94,17 +85,11 @@ app
     {
         IList<object?> one = context.Arguments;
 
-        object? result = await next(context);
-
-        return result;
+        return await next(context);
     });
 
 // TODO: Обработка для обычных контроллеров
 app.MapControllers().AddEndpointFilter(async (c, t) =>
-{
-    ArchController.Result<Guid>? result = (await t(c) as ObjectResult)!.Value as ArchController.Result<Guid>;
-
-    return result;
-});
+    await t(c));
 
 app.Run();

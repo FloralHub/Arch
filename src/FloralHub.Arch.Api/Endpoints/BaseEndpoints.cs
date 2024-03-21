@@ -6,9 +6,6 @@ public static class BaseEndpoints
     {
         groupBuilder.GetHello();
         groupBuilder.GetGuid();
-        groupBuilder.GetSchema();
-        groupBuilder.AddSchema();
-        groupBuilder.GetUser();
 
         return groupBuilder;
     }
@@ -30,62 +27,4 @@ public static class BaseEndpoints
             .WithTags("Private")
             .WithOpenApi()
             .WithDescription("Приватный базовый endpoint");
-
-    public static void GetSchema(this IEndpointRouteBuilder endpointBuilder) =>
-        endpointBuilder
-            .MapGet("/schema/{schemaId}", (Guid schemaId) => GetSchema(schemaId))
-            .WithName("GetSchema")
-            .WithTags("Private")
-            .WithSummary("Summary")
-            .WithDisplayName("Display name")
-            .WithOpenApi()
-            .WithDescription("Description");
-
-    public static void AddSchema(this IEndpointRouteBuilder endpointBuilder) =>
-        endpointBuilder
-            .MapPost("/schema/add", (Request request) => AddSchema(request))
-            .WithName("AddSchema")
-            .WithTags("Private")
-            .WithSummary("Summary")
-            .WithDisplayName("Display name")
-            .WithOpenApi()
-            .WithDescription("Description");
-
-    public static void GetUser(this IEndpointRouteBuilder endpointBuilder) =>
-        endpointBuilder
-            .MapPost("/user", async (IEnumerable<IUserService> userServices) =>
-            {
-                List<User> users = new();
-
-                foreach (IUserService service in userServices)
-                {
-                    users.Add(await service.GetUser(Guid.NewGuid()));
-                }
-
-                return users;
-            })
-            .WithName("GetUser")
-            .WithTags("Private")
-            .WithSummary("Summary")
-            .WithDisplayName("Display name")
-            .WithOpenApi()
-            .WithDescription("Description");
-
-    private static object GetSchema(Guid schemaId) =>
-        new
-        {
-            Id = schemaId,
-            Name = "Schema name",
-            Type = SchemaType.OneType,
-            AnotherType = SchemaType.TwoType
-        };
-
-    private static object AddSchema(Request request) =>
-        new
-        {
-            Id = Guid.NewGuid(),
-            Name = request.Name,
-            Type = request.SchemaType,
-            AnotherType = SchemaType.TwoType
-        };
 }
