@@ -41,7 +41,7 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new()
     {
         Version = "v1",
-        Title = $"{nameof(FloralHub.Arch)} API",
+        Title = $"{nameof(AlchemyLub.Arch)} API",
         Description = "Сервис предоставляющий API для получения архитектурных схем и их генерации",
         Contact = new()
         {
@@ -66,8 +66,6 @@ app.UseSwagger(options =>
 
 app.UseSwaggerUI(ui =>
 {
-    ui.DocExpansion(DocExpansion.List);
-    //ui.SupportedSubmitMethods(SubmitMethod.Get, SubmitMethod.Post);
     ui.ShowCommonExtensions();
     ui.ShowExtensions();
 });

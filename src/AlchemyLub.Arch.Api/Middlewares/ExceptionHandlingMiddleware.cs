@@ -1,4 +1,4 @@
-namespace FloralHub.Arch.Api.Middlewares;
+namespace AlchemyLub.Arch.Api.Middlewares;
 
 /// <summary>
 /// Промежуточное ПО для обработки ошибок сервиса.

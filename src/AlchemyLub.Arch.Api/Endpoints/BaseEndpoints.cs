@@ -1,4 +1,4 @@
-namespace FloralHub.Arch.Api.Endpoints;
+namespace AlchemyLub.Arch.Api.Endpoints;
 
 public static class BaseEndpoints
 {
@@ -14,7 +14,7 @@ public static class BaseEndpoints
         endpointBuilder
             .MapGet(
                 "/hello",
-                static () => "Hello FloralHub.Arch!")
+                static () => "Hello AlchemyLub.Arch!")
             .WithName("HelloEndpoint")
             .WithTags("Public")
             .WithOpenApi()

@@ -1,3 +1,3 @@
-namespace FloralHub.Arch.Api.Results;
+namespace AlchemyLub.Arch.Api.Results;
 
 public record ExceptionResponse(HttpStatusCode StatusCode, string Description);

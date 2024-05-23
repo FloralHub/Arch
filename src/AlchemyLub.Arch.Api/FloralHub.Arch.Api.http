@@ -1,0 +1,21 @@
+@AlchemyLub.Arch.Api_HostAddress = https://localhost:7017
+
+GET {{AlchemyLub.Arch.Api_HostAddress}}/guid
+Accept: application/json
+
+###
+
+GET {{AlchemyLub.Arch.Api_HostAddress}}/hello
+Accept: application/json
+
+###
+
+GET {{AlchemyLub.Arch.Api_HostAddress}}/schema/2e34b94e-f623-468b-821d-559e1e5bc257
+Accept: application/json
+
+###
+
+POST {{AlchemyLub.Arch.Api_HostAddress}}/schema/add
+Accept: application/json
+
+###

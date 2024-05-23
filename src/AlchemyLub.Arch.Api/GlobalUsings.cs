@@ -1,0 +1,10 @@
+global using System.Net;
+global using System.Text.Json;
+global using System.Text.Json.Serialization;
+global using AlchemyLub.Arch.Api.Endpoints;
+global using AlchemyLub.Arch.Api.Extensions;
+global using AlchemyLub.Arch.Api.Middlewares;
+global using AlchemyLub.Arch.Api.Results;
+global using Microsoft.Extensions.DependencyInjection.Extensions;
+global using Microsoft.OpenApi.Models;
+global using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
